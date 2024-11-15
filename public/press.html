@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Press | SwiftWheels</title>
+    <style>
+      /* Basic styling for the press section */
+      .press-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .news-card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        background: #f9f9f9;
+        transition: transform 0.3s;
+      }
+
+      .news-card:hover {
+        transform: scale(1.05);
+      }
+
+      .news-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .news-date {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 10px;
+      }
+
+      .news-description {
+        font-size: 1rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="index.html">SWIFTWHEELS</a>
+          </div>
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#rent">Rent</a></li>
+            <li><a href="#ride">Ride</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#press">Press</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section__container">
+      <h2 class="section__header">Press</h2>
+      <p>
+        Stay updated with the latest news and developments from SwiftWheels. Our press section provides media coverage and company announcements.
+      </p>
+      <h3>Latest News</h3>
+      <div class="press-container">
+        <div class="news-card">
+          <div class="news-title">
+            <a href="#">SwiftWheels Expands Fleet to Include Electric Vehicles</a>
+          </div>
+          <div class="news-date">October 15, 2024</div>
+          <div class="news-description">
+            SwiftWheels is proud to announce the addition of electric vehicles to its fleet, offering more eco-friendly options for our customers.
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-title">
+            <a href="#">SwiftWheels Announces New Loyalty Program</a>
+          </div>
+          <div class="news-date">September 30, 2024</div>
+          <div class="news-description">
+            Our new loyalty program rewards frequent renters with exclusive discounts and perks.
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-title">
+            <a href="#">SwiftWheels Reaches 1 Million Rentals Milestone</a>
+          </div>
+          <div class="news-date">September 15, 2024</div>
+          <div class="news-description">
+            We are thrilled to announce that SwiftWheels has reached a significant milestone of 1 million rentals, thanks to our valued customers.
+          </div>
+        </div>
+      </div>
+      <p>For press inquiries, contact <strong>press@swiftwheels.com</strong>.</p>
+    </section>
+
+    <footer>
+      <div class="footer__bar">
+        Copyright © 2024 SwiftWheels. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

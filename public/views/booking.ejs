@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqk1wY7hMlWpH/LPgl1g13QwhgL1au+mP3Si7j0S11KTRr8P7l7LqunN0g6L/0KhyMujCB4lQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Compact SUV Rental</h1>
+        <p>A compact SUV provides plenty of room for bags, plus nimble handling that is great for city driving.</p>
+        <p><%= carName || "Car Name" %> or similar</p>
+
+        <div class="car-details">
+            <div class="details-container">
+                <div class="details-section">
+                    <h2 class="details-title">Details</h2>
+                    <ul class="details-list">
+                        <li class="details-item"><i class="fas fa-car"></i> <%= transmission || "Automatic" %></li>
+                        <li class="details-item"><i class="fas fa-users"></i> <%= seats || "5" %> Seats</li>
+                    </ul>
+                </div>
+                <div class="details-section">
+                    <h2 class="details-title">Features</h2>
+                    <ul class="details-list">
+                        <li class="details-item"><i class="fas fa-gas-pump"></i> <%= fuelType || "Petrol" %></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Booking Details</h2>
+            <form method="post" action="/book">
+                <input type="hidden" name="carName" value="<%= carName %>">
+                <input type="hidden" name="imageUrl" value="<%= imageUrl %>">
+
+                <div class="form-group">
+                    <label for="start">Start Date:</label>
+                    <input type="date" id="start" name="startDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stop">End Date:</label>
+                    <input type="date" id="stop" name="endDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="days">Number of Days:</label>
+                    <input type="number" id="days" name="days" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="driver">Driver:</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="driver-toggle" name="driver" value="yes">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <br>
+
+                <button type="submit" class="bookbtn">Book Now</button>
+            </form>
+        </div>
+
+        <div class="car-info">
+            <img class="car-image" src="<%= imageUrl %>" alt="<%= carName %>">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <h1>Complete Your Booking</h1>
+    
+    <p>Thank you for choosing our car rental service! You’re just a few steps away from securing your vehicle. You have selected your city and car model, all that’s left is to confirm the rental duration below.</p>
+
+    <p><strong>Specify Your Rental Duration:</strong> Decide how many days you'll need the vehicle, and fill in the details below.</p>
+    
+    <p>Whether you’re planning a short trip or a long journey, we provide flexible rental periods to meet your needs. Each booking includes 24/7 roadside assistance and customer support to make sure your experience is smooth and hassle-free.</p>
+    
+    <p>Fill in the required number of days below to proceed with your booking. After submitting, you will receive a summary of your rental details for review. We look forward to providing you with a great driving experience!</p>
+   
+    <form method="post" action="/booking-summary"> 
+        <label for="start">Start Date:</label>
+        <input type="date" id="start" name="startDate" required>
+    
+        <label for="stop">End Date:</label>
+        <input type="date" id="stop" name="endDate" required>
+    
+        <label for="days">Number of Days:</label>
+        <input type="number" id="days" name="days" min="1" required> <br> <br>
+    
+        <!-- Add toggle for driver option -->
+        <label for="driver">Do you need a driver?</label>
+        <input type="checkbox" id="driver" name="driver" value="yes">
+    
+        <button type="submit" class="bookbtn">Book Now</button>
+    </form>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carName = localStorage.getItem('carName');
+            const imageUrl = localStorage.getItem('imageUrl');
+    
+            const bookingForm = document.querySelector('form');
+    
+            // Add hidden inputs for carName and imageUrl
+            const carNameInput = document.createElement('input');
+            carNameInput.type = 'hidden';
+            carNameInput.name = 'carName';
+            carNameInput.value = carName;
+            bookingForm.appendChild(carNameInput);
+    
+            const imageUrlInput = document.createElement('input');
+            imageUrlInput.type = 'hidden';
+            imageUrlInput.name = 'imageUrl';
+            imageUrlInput.value = imageUrl;
+            bookingForm.appendChild(imageUrlInput);
+    
+            // Add event listener to toggle driver option
+            const driverCheckbox = document.getElementById('driver');
+            driverCheckbox.addEventListener('change', () => {
+                const driver = driverCheckbox.checked ? "yes" : "no";
+                localStorage.setItem('driver', driver);
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Listing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <div class="nav__logo">
+                <a href="index.html">SWIFTWHEELS</a>
+              </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for model, features, etc">
+            <button>Search</button>
+        </div>
+    </header>
+
+
+    <div class="main-content">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3>Find Your Perfect Ride!</h3>
+                <div class="slider">
+                    <label for="distance">Distance</label>
+                    <input type="range" id="distance" min="0" max="100" value="35">
+                    <span>35 km</span>
+                </div>
+                <br>
+                <div class="filter">
+                    <input type="checkbox" id="home-delivery">
+                    <label for="home-delivery">Home Delivery</label>
+                    <p>Additional Delivery charge applicable</p>
+                </div>
+                <div class="slider">
+                    <label for="price">Total Price</label>
+                    <input type="range" id="price" min="100" max="4000" value="2320">
+                    <span>Rs. 500 - Rs. 3300</span>
+                </div>
+                <div class="filter">
+                    <h4>Car Details</h4>
+                    <div>
+                        <input type="checkbox" id="suv">
+                        <label for="suv">SUV</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sedan">
+                        <label for="sedan">Sedan</label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+        
+            <!-- Car Listing Section -->
+            <section class="car-listing">
+            
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/image.png" alt="Maruti Suzuki Swift Dzire 2016">
+                    </div>
+                    <div class="car-info">
+                        <h3>Maruti Suzuki Swift Dzire 2016</h3>
+                        <p>Manual • Diesel • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹130/hr</span> ₹110/hr</p>
+                        <div class="ratings">
+                            <span>4.50 | 4 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Maruti%20Swift%20Dzire&price=110&image=assets/image.png" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/image2.png" alt="Suzuki Ertiga">
+                    </div>
+                    <div class="car-info">
+                        <h3>Suzuki Ertiga</h3>
+                        <p>Manual • Diesel • 7 Seats</p>
+                        <p class="price"><span class="old-price">₹300/hr</span> ₹290/hr</p>
+                        <div class="ratings">
+                            <span>4.50 | 4 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Suzuki%20Ertiga&price=290&image=assets/image2.png" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/image3.png" alt="Suzuki Baleno">
+                    </div>
+                    <div class="car-info">
+                        <h3>Suzuki Baleno</h3>
+                        <p>Manual • Diesel • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹250/hr</span> ₹210/hr</p>
+                        <div class="ratings">
+                            <span>4.50 | 4 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Suzuki%20Baleno&price=210&image=assets/image3.png" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download.jpg" alt="Hyundai i20">
+                    </div>
+                    <div class="car-info">
+                        <h3>Hyundai i20</h3>
+                        <p>Automatic • Petrol • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹220/hr</span> ₹200/hr</p>
+                        <div class="ratings">
+                            <span>4.70 | 3 Trips</span>
+                        </div>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Hyundai%20i20&price=200&image=assets/download.jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download (1).jpg" alt="Honda City">
+                    </div>
+                    <div class="car-info">
+                        <h3>Honda City</h3>
+                        <p>Manual • Diesel • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹350/hr</span> ₹320/hr</p>
+                        <div class="ratings">
+                            <span>4.80 | 5 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Honda%20City&price=320&image=assets/download%20(1).jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download (2).jpg" alt="Ford Endeavour">
+                    </div>
+                    <div class="car-info">
+                        <h3>Ford Endeavour</h3>
+                        <p>Automatic • Diesel • 7 Seats</p>
+                        <p class="price"><span class="old-price">₹800/hr</span> ₹770/hr</p>
+                        <div class="ratings">
+                            <span>4.90 | 8 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Ford%20Endeavour&price=770&image=assets/download%20(2).jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download (3).jpg" alt="Mahindra Thar">
+                    </div>
+                    <div class="car-info">
+                        <h3>Mahindra Thar</h3>
+                        <p>Manual • Diesel • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹650/hr</span> ₹630/hr</p>
+                        <div class="ratings">
+                            <span>4.80 | 2 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Mahindra%20Thar&price=630&image=assets/download%20(3).jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download (4).jpg" alt="Kia Seltos">
+                    </div>
+                    <div class="car-info">
+                        <h3>Kia Seltos</h3>
+                        <p>Automatic • Petrol • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹470/hr</span> ₹450/hr</p>
+                        <div class="ratings">
+                            <span>4.60 | 6 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Kia%20Seltos&price=450&image=assets/download%20(4).jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download (5).jpg" alt="Hyundai Venue">
+                    </div>
+                    <div class="car-info">
+                        <h3>Hyundai Venue</h3>
+                        <p>Manual • Petrol • 5 Seats</p>
+                        <p class="price"><span class="old-price">₹280/hr</span> ₹270/hr</p>
+                        <div class="ratings">
+                            <span>4.75 | 7 Trips</span>
+                        </div>
+                        <div class="features">
+                            <a href="billing.html?carName=Hyundai%20Venue&price=270&image=assets/download%20(5).jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="assets/download (6).jpg" alt="Toyota Innova Crysta">
+                    </div>
+                    <div class="car-info">
+                        <h3>Toyota Innova Crysta</h3>
+                        <p>Automatic • Diesel • 7 Seats</p>
+                        <p class="price"><span class="old-price">₹740/hr</span> ₹710/hr</p>
+                        <div class="ratings">
+                            <span>4.85 | 10 Trips</span>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="features">
+                            <a href="billing.html?carName=Toyota%20Innova%20Crysta&price=710&image=assets/download%20(6).jpg" target="_blank">
+                                <button class="feature-button">BOOK YOUR RIDE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            
+        
+        <script src="script.js"></script>
+</body>
+</html>

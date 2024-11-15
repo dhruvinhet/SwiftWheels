@@ -1,0 +1,204 @@
+/* General page styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f6f2; /* Softer off-white background */
+  color: #333;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container for booking form */
+.container {
+  max-width: 800px;
+  width: 100%;
+  background-color: #ffffff; /* White for card effect */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #f1c40f;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Car details section */
+.car-details, .car-info {
+  width: 100%;
+}
+
+/* Car image styling */
+.car-info {
+  display: flex;
+  justify-content: center;
+  background-color: #f2e5ad; /* Light yellow accent */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.car-image {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Booking form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="date"],
+input[type="number"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="date"]:focus,
+input[type="number"]:focus {
+  border-color: #f1c40f;
+  outline: none;
+}
+
+.bookbtn {
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f1c40f; /* Yellow primary button */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.bookbtn:hover {
+  background-color: #e1b307; /* Darker yellow */
+  transform: translateY(-2px);
+}
+
+/* Toggle Switch CSS */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ddd;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #f1c40f; /* Yellow when checked */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 2px #f1c40f; /* Yellow focus */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Booking Summary Styling */
+.booking-summary {
+  background-color: #fff9e6;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.summary-item {
+  margin-bottom: 10px;
+}
+
+.summary-value {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.details-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.details-item {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Layout adjustments for mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .car-info {
+    padding: 10px;
+  }
+
+  .bookbtn {
+    font-size: 0.9em;
+  }
+}

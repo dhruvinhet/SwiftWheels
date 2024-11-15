@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>FAQ | SwiftWheels</title>
+    <style>
+      /* Basic styling for the FAQ section */
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .faq-item {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .faq-question {
+        padding: 15px;
+        background: #f2f2f2;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: #e2e2e2;
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 15px;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="index.html">SWIFTWHEELS</a>
+          </div>
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#rent">Rent</a></li>
+            <li><a href="#ride">Ride</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section__container">
+      <h2 class="section__header">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">How do I rent a vehicle?</div>
+          <div class="faq-answer">
+            Renting a vehicle is simple! Just select your preferred vehicle, choose the dates, and complete the booking process. You can pay online or in person.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What documents do I need?</div>
+          <div class="faq-answer">
+            You will need a valid driver's license and a form of ID. For some vehicles, additional documents may be required.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I cancel my booking?</div>
+          <div class="faq-answer">
+            Yes, you can cancel your booking up to 24 hours before the start date without any charges. After that, cancellation fees may apply.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are there any age restrictions to rent a vehicle?</div>
+          <div class="faq-answer">
+            Yes, you must be at least 21 years old to rent a vehicle. Drivers under 25 may incur a young driver surcharge.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What happens if I return the vehicle late?</div>
+          <div class="faq-answer">
+            If you return the vehicle late, additional fees may apply. It’s best to inform us in advance if you anticipate a delay.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer roadside assistance?</div>
+          <div class="faq-answer">
+            Yes, we provide 24/7 roadside assistance for all rental vehicles at no additional charge.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer__bar">
+        Copyright © 2024 SwiftWheels. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript to toggle the FAQ answers
+      document.querySelectorAll('.faq-question').forEach((question) => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    </script>
+  </body>
+</html>

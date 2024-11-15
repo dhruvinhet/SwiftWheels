@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        href="https://fonts.googleapis.com/css2?family=Palatino&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="login.css">
+
+    <style>
+
+        /* Center-align the page content */
+        body {
+            font-family: 'Palatino', 'Palatino Linotype', serif; /* Set to Palatino font */
+            margin: 0;
+            padding: 0;
+            background: url('assets/image10.jpg') no-repeat center center fixed; /* Add background image */
+            background-size: contain;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Center-align the form container */
+        .form-container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button styling with yellow background and black text */
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            font-family: 'Palatino', 'Palatino Linotype', serif;
+            cursor: pointer;
+            background-color: #FFC107; /* Yellow color */
+            color: #000000; /* Black text */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FFA000; /* Darker yellow on hover */
+        }
+
+        /* Form inputs styling */
+        .form {
+            margin-top: 20px;
+            display: none;
+        }
+
+        input, select {
+            width: 90%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #333;
+            font-weight: bold;
+            font-family: 'Palatino', 'Palatino Linotype', serif; /* Font for headings */
+        }
+
+        /* Switch buttons style for toggling forms */
+        .switch-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .switch-buttons button {
+            margin: 0 5px;
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .switch-buttons button.active {
+            background-color: #FFC107;
+            color: #000000; /* Black text for active button */
+        }
+
+        /* Message styles */
+        .message {
+            margin-top: 10px;
+            color: #d9534f; /* Red for error messages */
+        }
+
+        .success-message {
+            color: #5cb85c; /* Green for success messages */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <button onclick="showForm('signup')">SignUp</button>
+        <button onclick="showForm('login')">Login</button>
+        <button onclick="showForm('forgotPassword')">Forgot Password</button>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="form" action="/signup" method="POST">
+            <input type="hidden" name="action" value="signup">
+            <h2>SignUp</h2>
+            <p>Existing user? Login!</p>
+            <select name="role" id="roleSignup" onchange="toggleAdminCode('signup')" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="customer">Customer</option>
+                <option value="driver">Driver</option>
+                <option value="admin">Admin</option>
+            </select>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone_no" title="Please enter a valid 10-digit phone number" placeholder="Phone No" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <label for="security_question">Security Question:</label>
+            <select name="security_question" required>
+                <option value="1">What is your pet's name?</option>
+                <option value="2">What is your mother's maiden name?</option>
+                <option value="3">What was the name of your first school?</option>
+            </select>
+
+            <label for="security_answer">Security Answer:</label>
+            <input type="text" name="security_answer" required>
+
+            <div id="adminCodeSignup" style="display: none;">
+                <label for="admin_code">Admin Code:</label>
+                <input type="text" name="admin_code" id="admin_code">
+            </div>
+
+            <p>You are one Step Closer to an Amazing Ride</p>
+            <div id="signup-error" class="message" style="display: none;"></div>
+            <button type="submit">SignUp</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="form" action="/login" method="POST" style="display: none;">
+            <input type="hidden" name="action" value="login">
+            <h2>Login</h2>
+            <p>Don't have an Account? Sign Up!</p>
+            <select name="role" id="roleLogin" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="customer">Customer</option>
+                <option value="driver">Driver</option>
+                <option value="admin">Admin</option>
+            </select>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <p>Welcome Back</p>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Forgot Password Form -->
+        <form id="forgotPasswordForm" class="form" action="/forgotPassword" method="POST" style="display: none;">
+            <input type="hidden" name="action" value="forgotPassword">
+            <h2>Forgot Password</h2>
+            <select name="role" id="roleForgotPassword" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="customer">Customer</option>
+                <option value="driver">Driver</option>
+                <option value="admin">Admin</option>
+            </select>
+            <input type="text" name="username" placeholder="Enter your username" required>
+
+            <label for="security_question">Security Question:</label>
+            <select name="security_question" required>
+                <option value="1">What is your pet's name?</option>
+                <option value="2">What is your mother's maiden name?</option>
+                <option value="3">What was the name of your first school?</option>
+            </select>
+
+            <label for="security_answer">Security Answer:</label>
+            <input type="text" name="security_answer" required>
+
+            <input type="password" name="new_password" id="new_password" placeholder="New Password" required>
+            <button type="submit">Reset Password</button>
+        </form>
+
+    </div>
+
+    <script>
+        // Function to toggle between forms
+        function showForm(formId) {
+            // Hide all forms
+            document.getElementById("signupForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("forgotPasswordForm").style.display = "none";
+
+            // Show the selected form
+            document.getElementById(formId + "Form").style.display = "block";
+        }
+
+        function toggleAdminCode(formId) {
+            const roleElement = document.getElementById('role' + formId.charAt(0).toUpperCase() + formId.slice(1));
+            const adminCodeSection = document.getElementById('adminCode' + formId.charAt(0).toUpperCase() + formId.slice(1));
+            adminCodeSection.style.display = roleElement.value === 'admin' ? 'block' : 'none';
+        }
+
+        // Handle signup form submission
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = this;
+        const errorContainer = document.getElementById("signup-error");
+
+        // ... your existing code to toggle forms ...
+
+        fetch("/signup", {
+            method: "POST",
+            body: new FormData(form) // Send form data
+        })
+        .then(response => {
+            if (!response.ok) {
+                // Error occurred
+                return response.json();
+            } else {
+                // Successful signup
+                // Redirect or show a success message
+                window.location.href = '/index.html'; 
+                return Promise.resolve();
+            }
+        })
+        .then(data => {
+            if (data.message) {
+                errorContainer.textContent = data.message; // Display error message
+                errorContainer.style.display = "block"; // Show the error container
+            }
+        })
+        .catch(error => {
+            console.error("Error during signup:", error);
+            errorContainer.textContent = "An error occurred. Please try again.";
+            errorContainer.style.display = "block";
+        });
+    });
+    </script>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting to inspect data
+            
+            const formData = new FormData(event.target);
+            const formObject = Object.fromEntries(formData.entries());
+            console.log("Form data being sent:", formObject);
+    
+            // Manually submit the form after logging (or use fetch if using Ajax)
+            event.target.submit();
+        });
+    </script>
+</body>
+
+</html>

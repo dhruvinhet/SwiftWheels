@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Details</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linking the main stylesheet -->
+  <style>
+    /* Additional custom styles for the billing page */
+    .billing__container {
+      max-width: var(--max-width);
+      margin: 5rem auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .billing__header {
+      text-align: center;
+      font-size: 2rem;
+      font-family: var(--header-font);
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .car-details__box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background-color: var(--extra-light);
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .car-details__image {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .car-details__info {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+
+    .car-details__info h3 {
+      font-family: var(--header-font);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .billing__summary {
+      background-color: var(--primary-color);
+      padding: 1.5rem;
+      border-radius: 10px;
+      color: var(--white);
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .billing__summary p {
+      margin: 0.5rem 0;
+    }
+
+    .billing__summary .total-cost {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Billing Header -->
+  <header class="header">
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="index.html">SWIFTWHEELS</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Billing Container -->
+  <div class="billing__container">
+    <h1 class="billing__header">Billing Details</h1>
+
+    <!-- Car Details Box -->
+    <div class="car-details__box">
+      <img id="car-image" src="" alt="Car Image" class="car-details__image">
+      <div class="car-details__info">
+        <h3 id="car-name">Car Name</h3>
+        <p>Price per hour: ₹<span id="car-price"></span></p>
+      </div>
+    </div>
+
+    <!-- Billing Summary -->
+    <div class="billing__summary">
+      <p>Hours Booked: <span id="hours-booked">4</span></p>
+      <p class="total-cost">Total Cost: ₹<span id="total-cost"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // Extract URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const carName = urlParams.get("carName");
+    const price = urlParams.get("price");
+    const image = urlParams.get("image");
+
+    // Populate HTML with data
+    document.getElementById("car-name").textContent = carName;
+    document.getElementById("car-price").textContent = price;
+    document.getElementById("car-image").src = image;
+
+    // Set a default number of hours
+    const hours = 4;
+    document.getElementById("hours-booked").textContent = hours;
+
+    // Calculate total cost
+    const totalCost = price * hours;
+    document.getElementById("total-cost").textContent = totalCost;
+  </script>
+</body>
+</html>

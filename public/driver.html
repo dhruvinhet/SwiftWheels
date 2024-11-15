@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Driver Dashboard | SwiftWheels</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">SWIFTWHEELS</a>
+        </div>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="driver.html">Dashboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav__btn">
+          <button class="btn" onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="dashboard__container">
+    <h2 class="section__header">Driver Dashboard</h2>
+    <p class="dashboard__subtitle">Welcome, <strong>Driver</strong>! Below are the ride requests available for you.</p>
+
+    <div class="dashboard__summary">
+      <h3 class="dashboard__summary-title">Pending Rides</h3>
+      <p class="dashboard__summary-info">Manage and accept ride requests from customers. Stay updated with real-time data.</p>
+    </div>
+
+    <div class="table__container">
+      <table class="request__table">
+        <thead>
+          <tr>
+            <th>Request ID</th>
+            <th>Customer Name</th>
+            <th>Pickup Location</th>
+            <th>Destination</th>
+            <th>Vehicle Type</th>
+            <th>Cost (₹)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="requests">
+          <!-- Ride requests are loaded here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="release-note.html" target="_blank">Release Note</a></li>
+          <li><a href="community-help.html" target="_blank">Community Help</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="about-us.html" target="_blank">About Us</a></li>
+          <li><a href="career.html" target="_blank">Career</a></li>
+          <li><a href="press.html" target="_blank">Press</a></li>
+          <li><a href="support.html" target="_blank">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Product</h4>
+        <ul class="footer__links">
+          <li><a href="demo.html" target="_blank">Demo</a></li>
+          <li><a href="security.html" target="_blank">Security</a></li>
+          <li><a href="faq.html" target="_blank">FAQ</a></li>
+          <li><a href="features.html" target="_blank">Features</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <ul class="footer__socials">
+          <li>
+            <a href="#" target="_blank"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank"><i class="ri-twitter-fill"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank"><i class="ri-linkedin-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024. All rights reserved. SUYASH DHRUVIN HARSHVARDHAN 
+    </div>
+  </footer>
+
+
+  <script src="main.js"></script>
+<script>
+    // Fetch data and display it in the table
+    async function loadDriverRequests() {
+      try {
+          const response = await fetch('/api/driver/requests');
+          const requests = await response.json();
+          const requestsTable = document.getElementById('requests');
+  
+          // Clear any existing rows
+          requestsTable.innerHTML = '';
+  
+          // Populate the table with the fetched requests
+          requests.forEach(request => {
+              const row = document.createElement('tr');
+  
+              row.innerHTML = `
+                  <td>${request.request_id}</td>
+                  <td>${request.customer_name}</td>
+                  <td>${request.pickup_location}</td>
+                  <td>${request.dropoff_location}</td>
+                  <td>${request.vehicle_type}</td>
+                  <td>₹${request.driver_charge}</td> <!-- Show driver charge here -->
+                  <td>
+                      <button onclick="acceptRequest(${request.request_id})">Accept</button>
+                      <button onclick="denyRequest(${request.request_id})">Deny</button>
+                  </td>
+              `;
+              requestsTable.appendChild(row);
+          });
+      } catch (error) {
+          console.error('Error loading driver requests:', error);
+      }
+  }
+  
+
+    // Load requests on page load
+    window.onload = loadDriverRequests;
+
+    // Function to accept a request
+    async function acceptRequest(requestId) {
+        try {
+            await fetch(`/api/driver/accept/${requestId}`, { method: 'POST' });
+            loadDriverRequests();  // Reload requests to update the table
+        } catch (error) {
+            console.error('Error accepting request:', error);
+        }
+    }
+
+    // Function to deny a request
+    async function denyRequest(requestId) {
+        try {
+            await fetch(`/api/driver/deny/${requestId}`, { method: 'POST' });
+            loadDriverRequests();  // Reload requests to update the table
+        } catch (error) {
+            console.error('Error denying request:', error);
+        }
+    }
+</script>
+
+</body>
+</html>

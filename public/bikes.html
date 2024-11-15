@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Listing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <div class="nav__logo">
+                <a href="index.html">SWIFTWHEELS</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for model, features, etc">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3>Find Your Perfect Bike!</h3>
+                <div class="slider">
+                    <label for="distance">Distance</label>
+                    <input type="range" id="distance" min="0" max="100" value="20">
+                    <span>20 km</span>
+                </div>
+                <br>
+                <div class="filter">
+                    <input type="checkbox" id="home-delivery">
+                    <label for="home-delivery">Home Delivery</label>
+                    <p>Additional Delivery charge applicable</p>
+                </div>
+                <div class="slider">
+                    <label for="price">Total Price</label>
+                    <input type="range" id="price" min="50" max="2000" value="800">
+                    <span>₹300 - ₹2000</span>
+                </div>
+                <div class="filter">
+                    <h4>Bike Details</h4>
+                    <div>
+                        <input type="checkbox" id="electric">
+                        <label for="electric">Electric</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="petrol">
+                        <label for="petrol">Petrol</label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Bike Listing Section -->
+        <section class="car-listing">
+            
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike1.jpg" alt="Royal Enfield Classic 350">
+                </div>
+                <div class="car-info">
+                    <h3>Royal Enfield Classic 350</h3>
+                    <p>Manual • Petrol • Mileage: 37 kmpl</p>
+                    <p class="price"><span class="old-price">₹500/hr</span> ₹480/hr</p>
+                    <p>₹2,500 excluding fees</p>
+                    <p>5 km away</p>
+                    <div class="ratings">
+                        <span>4.95 | 10 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>  
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike22.jpg" alt="Yamaha FZ S V3">
+                </div>
+                <div class="car-info">
+                    <h3>Yamaha FZ S V3</h3>
+                    <p>Manual • Petrol • Mileage: 45 kmpl</p>
+                    <p class="price"><span class="old-price">₹450/hr</span> ₹430/hr</p>
+                    <p>₹2,200 excluding fees</p>
+                    <p>7 km away</p>
+                    <div class="ratings">
+                        <span>4.80 | 7 Trips</span>
+                    </div>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike3.jpg" alt="Honda CB Shine">
+                </div>
+                <div class="car-info">
+                    <h3>Honda CB Shine</h3>
+                    <p>Manual • Petrol • Mileage: 60 kmpl</p>
+                    <p class="price"><span class="old-price">₹400/hr</span> ₹380/hr</p>
+                    <p>₹1,800 excluding fees</p>
+                    <p>12 km away</p>
+                    <div class="ratings">
+                        <span>4.70 | 6 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike4.jpg" alt="Bajaj Pulsar 150">
+                </div>
+                <div class="car-info">
+                    <h3>Bajaj Pulsar 150</h3>
+                    <p>Manual • Petrol • Mileage: 50 kmpl</p>
+                    <p class="price"><span class="old-price">₹450/hr</span> ₹420/hr</p>
+                    <p>₹2,200 excluding fees</p>
+                    <p>9 km away</p>
+                    <div class="ratings">
+                        <span>4.85 | 8 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike5.jpg" alt="Hero Splendor Plus">
+                </div>
+                <div class="car-info">
+                    <h3>Hero Splendor Plus</h3>
+                    <p>Manual • Petrol • Mileage: 65 kmpl</p>
+                    <p class="price"><span class="old-price">₹380/hr</span> ₹360/hr</p>
+                    <p>₹1,700 excluding fees</p>
+                    <p>10 km away</p>
+                    <div class="ratings">
+                        <span>4.60 | 5 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike6.jpg" alt="KTM Duke 250">
+                </div>
+                <div class="car-info">
+                    <h3>KTM Duke 250</h3>
+                    <p>Manual • Petrol • Mileage: 30 kmpl</p>
+                    <p class="price"><span class="old-price">₹600/hr</span> ₹580/hr</p>
+                    <p>₹3,000 excluding fees</p>
+                    <p>8 km away</p>
+                    <div class="ratings">
+                        <span>4.90 | 12 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike7.jpg" alt="Suzuki Gixxer SF">
+                </div>
+                <div class="car-info">
+                    <h3>Suzuki Gixxer SF</h3>
+                    <p>Manual • Petrol • Mileage: 48 kmpl</p>
+                    <p class="price"><span class="old-price">₹480/hr</span> ₹460/hr</p>
+                    <p>₹2,400 excluding fees</p>
+                    <p>9 km away</p>
+                    <div class="ratings">
+                        <span>4.75 | 8 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike8.jpg" alt="TVS Apache RTR 160">
+                </div>
+                <div class="car-info">
+                    <h3>TVS Apache RTR 160</h3>
+                    <p>Manual • Petrol • Mileage: 42 kmpl</p>
+                    <p class="price"><span class="old-price">₹450/hr</span> ₹430/hr</p>
+                    <p>₹2,200 excluding fees</p>
+                    <p>7 km away</p>
+                    <div class="ratings">
+                        <span>4.80 | 7 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike9.jpg" alt="Bajaj Avenger Street 160">
+                </div>
+                <div class="car-info">
+                    <h3>Bajaj Avenger Street 160</h3>
+                    <p>Manual • Petrol • Mileage: 45 kmpl</p>
+                    <p class="price"><span class="old-price">₹460/hr</span> ₹440/hr</p>
+                    <p>₹2,300 excluding fees</p>
+                    <p>6 km away</p>
+                    <div class="ratings">
+                        <span>4.85 | 9 Trips</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="assets/bike10.jpg" alt="Honda Hornet 2.0">
+                </div>
+                <div class="car-info">
+                    <h3>Honda Hornet 2.0</h3>
+                    <p>Manual • Petrol • Mileage: 42 kmpl</p>
+                    <p class="price"><span class="old-price">₹480/hr</span> ₹460/hr</p>
+                    <p>₹2,400 excluding fees</p>
+                    <p>5 km away</p>
+                    <div class="ratings">
+                        <span>4.70 | 8 Trips</span>
+                    </div>
+                    <div class="features">
+                        <button class="feature-button">BOOK YOUR BIKE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 SwiftWheels Rentals. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

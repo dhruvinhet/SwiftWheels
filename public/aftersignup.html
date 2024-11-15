@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>SWIFTWHEELS | RENTAL</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav__header">
+                <div class="nav__logo">
+                    <a href="#">SWIFTWHEELS</a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rent">Rent</a></li>
+                <li><a href="#ride">Ride</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav__btn">
+                <a href="login.html"><button class="btn">Logout</button></a>
+            </div>
+        </nav>
+
+        <!-- Form Section -->
+        <div class="header__container" id="home">
+            <h1>RENT & RIDE</h1>
+            <main>
+                <section>
+                    <form id="vehicle-search-form" action="/routes/locations.js" target="_blank">
+                        <label for="location">Pick up & Return location</label>
+                        <select id="location" style="width: 100px;" style="position: relative;" placeholder="MITWPU Kothrud" required>
+                            <!-- Options populated dynamically -->
+                        </select>
+
+                        <label for="vehicle-type" class="vehicle">Vehicle Type:</label>
+                        <select id="vehicle-type"required>
+                            <option value="car">Car</option>
+                            <option value="bike">Bike</option>
+                            <option value="truck">Truck</option>
+                            <option value="scooter">Scooter</option>
+                        </select>
+
+                        <div class="input__group">
+                            <label for="start">Start Date</label>
+                            <input type="date" name="start" id="start" />
+                        </div>
+                        <div class="input__group">
+                            <label for="stop">End Date</label>
+                            <input type="date" name="stop" id="stop" />
+                        </div>
+
+                        <button class="btn" type="submit">
+                            <i class="ri-search-line"></i>
+                        </button>
+                    </form>
+                </section>
+            </main>
+            <img src="assets/car1.png" alt="header" />
+        </div>
+        <a href="#about" class="scroll__down">
+            <i class="ri-arrow-down-line"></i>
+        </a>
+    </header>
+
+    <section class="section__container range__container" id="about">
+        <h2 class="section__header">WIDE RANGE OF VEHICLES</h2>
+        <div class="range__grid">
+            <div class="range__card">
+                <img src="assets/car2.png" alt="range" />
+                <div class="range__details">
+                    <h4>CARS</h4>
+                    <a href="cars.html" target="_blank"><i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+            <div class="range__card">
+                <img src="assets/truck2 (1).png" alt="range" />
+                <div class="range__details">
+                    <h4>TRUCKS</h4>
+                    <a href="trucks.html" target="_blank"><i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+            <div class="range__card">
+                <img src="assets/scooter2 (1).jpg" alt="range" />
+                <div class="range__details">
+                    <h4>SCOOTERS</h4>
+                    <a href="scooters.html" target="_blank"><i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+            <div class="range__card">
+                <img src="assets/bike2 (2).jpg" alt="range" />
+                <div class="range__details">
+                    <h4>BIKES</h4>
+                    <a href="bikes.html" target="_blank"><i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__container location__container" id="rent">
+        <div class="location__image">
+            <img src="assets/location.png" alt="location" />
+        </div>
+        <div class="location__content">
+            <h2 class="section__header">FIND CAR IN YOUR LOCATIONS</h2>
+            <p>
+                Discover the perfect vehicle tailored to your needs, wherever you are.
+                Our 'Find Car in Your Locations' feature allows you to effortlessly
+                search and select from our premium fleet available near you. Whether
+                you're looking for a luxury sedan, a spacious SUV, or a sporty
+                convertible, our easy-to-use tool ensures you find the ideal car for
+                your journey. Simply enter your location, and let us connect you with
+                top-tier vehicles ready for rental.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="select__container" id="ride">
+        <h2 class="section__header">PICK YOUR DREAM CAR TODAY</h2>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="select__card">
+                        <img src="assets/a1.png" alt="select" />
+                        <div class="select__info">
+                            <div class="select__info__card">
+                                <span><i class="ri-speed-up-line"></i></span>
+                                <h4>200 <span>km/h</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-settings-5-line"></i></span>
+                                <h4>6 <span>speed</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-roadster-line"></i></span>
+                                <h4>5 <span>seats</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-signpost-line"></i></span>
+                                <h4>15 <span>milage</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="select__card">
+                        <img src="assets/a2.png" alt="select" />
+                        <div class="select__info">
+                            <div class="select__info__card">
+                                <span><i class="ri-speed-up-line"></i></span>
+                                <h4>215 <span>km/h</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-settings-5-line"></i></span>
+                                <h4>6 <span>speed</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-roadster-line"></i></span>
+                                <h4>5 <span>seats</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-signpost-line"></i></span>
+                                <h4>16 <span>milage</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="select__card">
+                        <img src="assets/a3.png" alt="select" />
+                        <div class="select__info">
+                            <div class="select__info__card">
+                                <span><i class="ri-speed-up-line"></i></span>
+                                <h4>306 <span>km/h</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-settings-5-line"></i></span>
+                                <h4>6 <span>speed</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-roadster-line"></i></span>
+                                <h4>5 <span>seats</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-signpost-line"></i></span>
+                                <h4>12 <span>milage</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="select__card">
+                        <img src="assets/a4.png" alt="select" />
+                        <div class="select__info">
+                            <div class="select__info__card">
+                                <span><i class="ri-speed-up-line"></i></span>
+                                <h4>350 <span>km/h</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-settings-5-line"></i></span>
+                                <h4>6 <span>speed</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-roadster-line"></i></span>
+                                <h4>2 <span>seats</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-signpost-line"></i></span>
+                                <h4>08 <span>milage</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="select__card">
+                        <img src="assets/a5.png" alt="select" />
+                        <div class="select__info">
+                            <div class="select__info__card">
+                                <span><i class="ri-speed-up-line"></i></span>
+                                <h4>254 <span>km/h</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-settings-5-line"></i></span>
+                                <h4>6 <span>speed</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-roadster-line"></i></span>
+                                <h4>5 <span>seats</span></h4>
+                            </div>
+                            <div class="select__info__card">
+                                <span><i class="ri-signpost-line"></i></span>
+                                <h4>10 <span>milage</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="/" class="select__form">
+            <div class="select__price">
+                <span><i class="ri-price-tag-3-line"></i></span>
+                <div><span id="select-price">225</span> ₹ /day</div>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="section__container story__container">
+        <h2 class="section__header">STORIES BEHIND THE WHEEL</h2>
+        <div class="story__grid">
+            <div class="story__card">
+                <div class="story__date">
+                    <span>12</span>
+                    <div>
+                        <p>January</p>
+                        <p>2024</p>
+                    </div>
+                </div>
+                <h4>Adventures on the Open Road</h4>
+                <p>
+                    Join us as we dive into the exhilarating stories of travelers who
+                    embarked on unforgettable journeys with PREMIUM CAR RENTAL.
+                </p>
+                <img src="assets/b1.png" alt="story" />
+            </div>
+            <div class="story__card">
+                <div class="story__date">
+                    <span>04</span>
+                    <div>
+                        <p>March</p>
+                        <p>2024</p>
+                    </div>
+                </div>
+                <h4>Luxury and Comfort: Experiences</h4>
+                <p>
+                    In this series, we highlight the luxurious touches, unparalleled
+                    comfort, and exceptional service that make every ride.
+                </p>
+                <img src="assets/b2.jpg" alt="story" />
+            </div>
+            <div class="story__card">
+                <div class="story__date">
+                    <span>18</span>
+                    <div>
+                        <p>June</p>
+                        <p>2024</p>
+                    </div>
+                </div>
+                <h4>Cars that Adapt to Your Lifestyle</h4>
+                <p>
+                    Read about how our versatile vehicles have seamlessly integrated
+                    into the lives of professionals and families alike.
+                </p>
+                <img src="assets/b3.png" alt="story" />
+            </div>
+        </div>
+    </section>
+
+    <section class="banner__container">
+        <div class="banner__wrapper">
+            <img src="assets/l1.png" alt="banner" />
+            <img src="assets/l2.png" alt="banner" />
+            <img src="assets/l3.png" alt="banner" />
+            <img src="assets/l4.png" alt="banner" />
+            <img src="assets/l5.png" alt="banner" />
+            <img src="assets/l6.png" alt="banner" />
+            <img src="assets/l7.png" alt="banner" />
+            <img src="assets/l8.png" alt="banner" />
+            <img src="assets/l9.png" alt="banner" />
+            <img src="assets/l10.png" alt="banner" />
+
+            <img src="assets/l1.png" alt="banner" />
+            <img src="assets/l2.png" alt="banner" />
+            <img src="assets/l3.png" alt="banner" />
+            <img src="assets/l4.png" alt="banner" />
+            <img src="assets/l5.png" alt="banner" />
+            <img src="assets/l6.png" alt="banner" />
+            <img src="assets/l7.png" alt="banner" />
+            <img src="assets/l8.png" alt="banner" />
+            <img src="assets/l9.png" alt="banner" />
+            <img src="assets/l10.png" alt="banner" />
+        </div>
+    </section>
+
+    <section class="download">
+        <div class="section__container download__container">
+            <div class="download__content">
+                <h2 class="section__header">PREMIUM CAR RENTAL</h2>
+                <div class="download__links">
+                    <a href="#">
+                        <img src="assets/apple.png" alt="apple" />
+                    </a>
+                    <a href="#">
+                        <img src="assets/google.png" alt="google" />
+                    </a>
+                </div>
+            </div>
+            <div class="download__image">
+                <img src="assets/download.png" alt="download" />
+            </div>
+        </div>
+    </section>
+
+    <section class="news" id="contact">
+        <div class="section__container news__container">
+            <h2 class="section__header">Write me a Message.</h2>
+            <form>
+                <input type="text" id="name" placeholder="Your name" required />
+                <br>
+                <input type="email" id="email" placeholder="Your email" required />
+                <br>
+                <textarea id="message" placeholder="Write Message Here." rows="4"></textarea>
+                <br>
+                <button class="btn" type="submit" onclick="sendMail(event)">
+                    <i class="ri-send-plane-fill"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h4>Resources</h4>
+                <ul class="footer__links">
+                    <li><a href="release-note.html" target="_blank">Release Note</a></li>
+                    <li><a href="community-help.html" target="_blank">Community Help</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <ul class="footer__links">
+                    <li><a href="about-us.html" target="_blank">About Us</a></li>
+                    <li><a href="career.html" target="_blank">Career</a></li>
+                    <li><a href="press.html" target="_blank">Press</a></li>
+                    <li><a href="support.html" target="_blank">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Product</h4>
+                <ul class="footer__links">
+                    <li><a href="demo.html" target="_blank">Demo</a></li>
+                    <li><a href="security.html" target="_blank">Security</a></li>
+                    <li><a href="faq.html" target="_blank">FAQ</a></li>
+                    <li><a href="features.html" target="_blank">Features</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Follow Us</h4>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#" target="_blank"><i class="ri-facebook-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i class="ri-twitter-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024. All rights reserved. SUYASH DHRUVIN HARSHVARDHAN SIDDHARTH MIT
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <!-- Load EmailJS as a global script -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init("J7SqcefaQrFM1DHMo"); // Replace with your actual Public Key
+    </script>
+    <script>
+        fetch('http://localhost:3000/api/locations') // Use correct port and URL
+            .then(response => response.json())
+            .then(locations => {
+                const locationDropdown = document.getElementById('location');
+                locations.forEach(location => {
+                    const option = document.createElement('option');
+                    option.value = location.location_name;
+                    option.text = location.location_name;
+                    locationDropdown.add(option);
+                });
+            })
+            .catch(error => console.error('Error fetching locations:', error));
+    </script>
+
+</body>
+
+</html>

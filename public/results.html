@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="results.css" />
+  <title>Available Vehicles</title>
+</head>
+
+<body>
+  <header>
+    <h1>Available Vehicles</h1>
+  </header>
+  <main>
+    <section id="results">
+      <ul id="vehicle-list"></ul>
+    </section>
+  </main>
+  <script>
+    // Function to get query parameters from URL (unchanged)
+    function getQueryParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return {
+        location: urlParams.get('location'),
+        vehicleType: urlParams.get('vehicleType'),
+      };
+    }
+
+    async function loadVehicles() {
+      const { location, vehicleType } = getQueryParams();
+      try {
+        const response = await fetch(
+          `http://localhost:3000/api/locations/vehicles?location=${location}&vehicleType=${vehicleType}`
+        );
+        const vehicles = await response.json();
+        const vehicleList = document.getElementById('vehicle-list');
+        vehicleList.innerHTML = ''; // Clear any existing results
+
+        if (vehicles.length === 0) {
+          vehicleList.innerHTML =
+            "<li>No vehicles available for the selected criteria.</li>";
+        } else {
+          vehicles.forEach((vehicle) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                        <img src="${vehicle.image_url}" alt="${vehicle.car_name
+              }" />
+                        <h3>${vehicle.car_name}</h3>
+                        <div class="details">
+                            <p>${vehicle.transmission} • ${vehicle.fuel_type
+              } • ${vehicle.seats} Seats</p>
+                        </div>
+                        <div class="price">
+                            <span>₹${vehicle.price_per_hour
+              }/hr</span> ₹${vehicle.price_per_hour}/hr
+                        </div>
+                        <div class="ratings">
+                            ${vehicle.rating} | ${vehicle.trips} Trips
+                        </div>
+                        <button onclick="handleBooking(this)">BOOK YOUR RIDE</button>
+                    `;
+            vehicleList.appendChild(li);
+          });
+        }
+      } catch (error) {
+        console.error('Error loading vehicles:', error);
+      }
+    }
+
+    async function handleBooking(button) {
+      const carName = button.parentElement.querySelector('h3').textContent;
+      const image = button.parentElement.querySelector('img').src;
+
+      // Store car details in local storage
+      localStorage.setItem('carName', carName);
+      localStorage.setItem('imageUrl', image);
+
+      // Redirect to booking page
+      window.location.href = 'booking.html'; 
+  }
+
+    window.onload = loadVehicles;
+  </script>
+</body>
+
+</html>
