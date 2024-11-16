@@ -22,10 +22,10 @@ app.use(express.static('public'));
 
 // Database Connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Patel@2005',
-    database: 'details'
+    host: 'sql207.infinityfree.com', // Your database host
+    user: 'if0_37720563',           // Your database username
+    password: 'Dhruvin2005',                // Your database password
+    database: 'if0_37720563_details' // Your database name
 });
 
 db.connect((err) => {
@@ -35,6 +35,7 @@ db.connect((err) => {
     }
     console.log('Connected to MySQL');
 });
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'login.html'));
@@ -174,9 +175,7 @@ app.get('/index.html', authenticateToken, (req, res) => {
 // Use the locations route
 app.use('/api/locations', locationsRoute);
 
-module.exports = {
-    db: db
-};
+module.exports = app; 
 
 // Route to fetch booking requests for drivers
 app.get('/api/driver/requests', authenticateToken, (req, res) => {

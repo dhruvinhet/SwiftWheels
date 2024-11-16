@@ -4,20 +4,17 @@ const router = express.Router();
 const mysql = require('mysql2');
 const app = require('../app'); 
 
-// Database Connection (Ensure it's correct)
+// Database Connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Patel@2005', // Replace with your actual password
-    database: 'details'
+    host: 'sql207.infinityfree.com', // Your database host
+    user: 'if0_37720563',           // Your database username
+    password: 'Dhruvin2005',                // Your database password
+    database: 'if0_37720563_details' // Your database name
 });
 
-// Handle Database Connection Errors
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to MySQL:', err);
-        // Handle this error appropriately, like logging it or displaying a message.
-        // You could also set up a default error handler in your 'app.js' to catch this error and return a more user-friendly response.
         return;
     }
     console.log('Connected to MySQL');
