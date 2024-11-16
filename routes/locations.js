@@ -6,10 +6,10 @@ const app = require('../app');
 
 // Database Connection
 const db = mysql.createConnection({
-    host: 'sql207.infinityfree.com', // Your database host
-    user: 'if0_37720563',           // Your database username
-    password: 'Dhruvin2005',                // Your database password
-    database: 'if0_37720563_details' // Your database name
+    host: 'b3qucopmbb6fgnq8kekp-mysql.services.clever-cloud.com', // Your database host
+    user: 'ujjmrpdrjflefsxx',           // Your database username
+    password: 'r2ZIdUC8e6kvUmPWSWTC',                // Your database password
+    database: 'b3qucopmbb6fgnq8kekp' // Your database name
 });
 
 db.connect((err) => {
